@@ -1,7 +1,8 @@
 <?php 
 /* Main page with two forms: sign up and log in */
-require 'db.php';
 session_start();
+require 'db.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +45,7 @@ header
   color: black;
 }
 
+body
 .main
 {
   padding: 0px;
@@ -78,7 +80,7 @@ header
   color: #a0b3b0;
   font-size: 20px;
   float: left;
-  width: 50%;
+  width: 95%;
   text-align: center;
   cursor: pointer;
   -webkit-transition: .5s ease;
@@ -92,6 +94,63 @@ header
   background: DodgerBlue;
   color: #ffffff;
 }
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 96%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: DodgerBlue;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: DodgerBlue;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #1873cc;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
 
 </style>
 </head>
