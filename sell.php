@@ -1,5 +1,5 @@
 <?php
-include_once 'db.php'
+include_once 'db.php';
 /* Registration process, inserts user info into the database
    and sends account confirmation email message
  */
@@ -12,11 +12,13 @@ include_once 'db.php'
 // $_SESSION['Price'] = $_POST['Price'];
 
 // Escape all $_POST variables to protect against SQL injections
-$Book = $mysqli->escape_string($_POST['bookname']);
-$Author = $mysqli->escape_string($_POST['fullname']);
-$ISBN = $mysqli->escape_string($_POST['ISBN']);
-$Condition = $mysqli->escape_string($_POST['Condition']);
-$Price = $mysqli->escape_string($_POST['Price']);
+if (isset($_GET['submit']))
+{
+$Book = $mysqli->escape_string($_GET['bookname']);
+$Author = $mysqli->escape_string($_GET['fullname']);
+$ISBN = $mysqli->escape_string($_GET['ISBN']);
+$Condition = $mysqli->escape_string($_GET['Condition']);
+$Price = $mysqli->escape_string($_GET['Price']);
 //$Image = $mysqli->escape_string($_POST['myFile']);
 
 
@@ -25,8 +27,9 @@ $Price = $mysqli->escape_string($_POST['Price']);
             VALUES ('$Book''$Author','$ISBN','$Condition','$Price')";
 
     // Add user to the database
-    if ( $mysqli->query($sql) )     header("location:buy&sell.php");
+    if ( $mysqli->query($sql) )     header("location:buy&sell.html");
     else {
         $_SESSION['message'] = 'upload failed!';
-        header("location: error.php");
+        header("location: SELLerror.php");
     }
+}
