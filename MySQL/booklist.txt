@@ -7,7 +7,7 @@ CREATE TABLE `textbook`.`booklist`
     `author` VARCHAR(255) NOT NULL,
     `ISBN` INT(100) NOT NULL,
     `image` VARCHAR(255) NOT NULL,
-    `saler` VARCHAR(255) NOT NULL,
+    `seller` VARCHAR(255) NOT NULL,
     `price` DOUBLE NOT NULL,
     `sale_status` BOOLEAN,
 PRIMARY KEY (`id`) 
