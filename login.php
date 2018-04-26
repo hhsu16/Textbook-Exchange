@@ -22,7 +22,7 @@ else { // User exists
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;
 
-        header("location: sell&buy.html");
+        header("location: buy&sell.html");
     }
     else {
         $_SESSION['message'] = "You have entered wrong password, try again!";
